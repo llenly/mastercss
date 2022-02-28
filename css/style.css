@@ -1,0 +1,853 @@
+/*FUENTE PARA LOS ICONOS Y LAS LETRAS*/
+
+@font-face{
+    font-family: "TrebuchetMS";
+    src: url("fonts/TrebuchetMS.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face{
+    font-family: "BebasNeue";
+    src: url("fonts/BebasNeue.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "WebSymbolsRegular";
+    src: url("fonts/websymbols-regular-webfont.eot");/*fix para internet explorer*/
+    src :url("fonts/websymbols-regular-webfont.eot?#efix") format("embedded-opentype"),
+         url("fonts/websymbols-regular-webfont.woff") format("woff"),
+         url("fonts/websymbols-regular-webfont.ttf") format("truetype"),
+         url("fonts/websymbols-regular-webfont.svg#WebSymbolsRegular") format("svg");
+
+    font-weight: normal; 
+    font-style: normal;  
+
+}
+ 
+/*ESTILOS GENERALES DE LA WEB */
+
+*{
+    margin: 0px; /* PARA QUE SE RESETEN Y NOSOTROS PODER DAR LO MARGENES Y LOS PADDING QUE QUERAMOS */
+    padding: 0px;
+}
+
+body{
+    background: url("../img/pattern.png");/*(../, es porque la carpeta imag esta fuera de la carpeta css, salir de ccs y llegar img, esto es una imagen o patron para darle color (background a tod el body) )*/
+}
+
+.wrap{ /* es el contenedor del menu*/
+    width: 1250px;
+    margin: 0px auto;/* es para centar un elemento en css*/
+
+}
+
+
+.gear, .icon { /*este es el symbolo de engranaje y los demas iconos en html se usan letras y luefo en css se le ponen fuentes   */
+    font-family: "WebSymbolsRegular";
+}
+
+/*ESTO ES PARA LIMPIAR LOS FLOTADOS ENTRE LOS ARTICULOS Y EL H2*/
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+
+/*CABECERA*/
+
+#header{
+    width: 100%;
+    height: 70px;
+    background-color:black;
+    font-family: "BebasNeue";
+    color: white;
+}
+
+#logo{
+    float: left;
+    width: 200px; 
+  /*  height:50px ; */
+    background-color: #37bcf9;
+    text-align: center;
+    margin-top: 8px;
+    margin-left: 20px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 1s;
+}
+
+#logo h3 {
+    display: block;
+    float: right;
+    font-size: 40px;
+    margin-top: 5px;
+    margin-right: 55px;
+    transition: all 1s;
+
+}
+/*ANIMACION PARA EL TEXTO H3(BLOG), SALE TOTALMENTE DE LA CAJA DESDE LA DRECHA */
+#logo:hover h3{
+    animation: fromRight 1s linear;
+}
+@keyframes fromRight{
+    from{
+        transform: translateX(200%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+/*ANIMACIONES KEYFRAME Y TRANSIIONES */
+
+#logo:hover{
+    border-radius: 3px;
+    background-color: #ccc;
+    color: black;
+} 
+
+
+#logo .gear{
+   display: block;
+   float: left;
+   font-size: 30px;
+   margin-top: 8px;
+   margin-left: 25px;
+   animation-name: rotate-gear; /*1*/
+   animation-duration: 3s; /*2*/
+   animation-iteration-count: infinite;   /*3*//*esto es para sea sin parar */
+   animation-timing-function: linear;   /*4*/  /*siempre va tener la misma velocidad*/
+}
+/* esta etiqueta es para darle efectos a las animacines, primero se crea la definicion,(arriba en logo gear) y luego se le dan los estilos,con la propiedad (@keyframes) from y to es el punto de inicio hasta donde se quiere que haga animacion  
+y ademas usamos la propiedd de tranformcon sus valores en este caso rotate z */
+
+@keyframes rotate-gear{
+      from{
+          transform: rotateZ(0deg); /*(0deg es = 0 grados )*/
+          }
+      to{
+          transform: rotateZ(360deg);
+      }    
+}
+/*animacion cuando haga hover del texto del blog aparezca de la nada y la tuerca apaerza desde abajo
+una vez mas de define el NAME (nombre), DURATION (el tiempo) y ITERATION-COUNT (??) O TIMING-FUCTION( LINEAR) 
+LUEGO SE HACEN LOS @KEYFRAMES (fromBellows, es el nombre )
+
+DUDA ¿ PORQUE SOLO ANIMATION , SIN NAME Y CON (Y)PORQUE Y EN VEZ DE Z Y PARA QUE SIRVE EL OVERFLOW: HIDDEN ARRIBA EN LOGO
+1 LA TURCA DESAPARECE HACIA ABAJO CUANDO HAGO HOVER 
+2 EL TEXTO (BLOG) VA APARECER */
+
+#logo:hover .gear{
+   animation: fromBellow 1s linear; 
+} 
+
+@keyframes fromBellow{
+    0%{
+        transform: translateY(0%);
+    }
+    50%{
+        transform: translateY(200%); /*200, porque es el width que tiene el logo */
+    }
+
+    0%{
+        transform: translateY(0%);
+    }
+}
+
+
+#menu{
+    float: right;/*derecha, para que estes uno al lado del otro */
+    height: 70px;
+    background: transparent;
+}
+#menu ul li {
+    font-size: 22px;
+    display: inline-block; /*CON ESTO SE FLOTAN LOS LI, UNO AL LAO DEL OTRO */
+    /*float*/
+    margin: 0px 20px 0px 20px; /*esto es marhen a la izquierda y a la derecha*/
+    line-height: 70px;
+    letter-spacing: 1px;
+}
+
+#menu ul li a {
+    display: block;
+    color: yellow;
+    text-decoration: none;
+    transition: all 200ms;
+}
+
+#menu ul li a:hover{
+    color: #37bcf9;
+    transform: scale(1.2, 1.2); /* es un tipo de transicion o tranformcion ( cambio de color) sin cambiar el formato del elemnto */
+}
+
+      /*BANNER ESTILOS*/
+
+#banner{
+    width: 96.5%;
+    height: 100px;
+    border: 10px solid white;/*te crea como una caja dentro de la caja (banner)*/
+    background-image: url(../img/bakbaner.png);
+    box-shadow: 0px 0px 3px gray;/*resalta la cja por fuera dandole un efecto de sombra */
+    background-position: -328px -180px; /*los (-) en los eje x ,y , son para poder mover la imagen a donde queramos que nos quede de fondo */
+    margin: 20px auto; /*le va dar margen por todos lados y lo centra en la pagina */
+    overflow: hidden;
+    animation: backBanner 10s linear; /*ES PARA CREAR LA ANIMACION CON LOS @KEYFRAMES*/
+}
+/*ANIMACION PARA EL BANNER (LA CAJA )SE LE VA A MOVER EL FONDO DE LA IMAGEN
+EMPIEZA DESDE CERO Y SE VA MOVIENDO HASTA LA POSICION QUE TENIA ORIGINAL  */
+
+@keyframes backBanner{
+    0%{
+     background-position: 0px 0px;
+    }
+    100%{
+        background-position: -328px -180px;
+    }
+}
+
+#banner h1{
+    display: block; /*para trabajar con el como quieras solo*/
+    width: 850px;
+    font-family: "BebasNeue";
+   /* text-align: center; se soluciona con el margin , auto */
+    color: white;
+    font-size:45px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-shadow: 4px 0px 2px black;
+    margin: 25px auto;/*auto es para centrarlo*/
+    overflow: hidden;
+    animation: showText 10s linear; /*animacion para el texto del banner o sea el h1*/
+}
+
+@keyframes showText{
+    0%{
+       transform: translateX(-600%); scale: (5,5);/*ESTO HACE QUE EL TEXTO ESTE OCULTO PORQUE EL BANNER EN SI TIENE UN HOVERFLOW HDDEN, y el texto en la misma ranformacion va a ser mas grande con el scale y opacity 1 es que es visble  */
+       opacity: 1;
+    }
+    50%{
+        transform: translateX(600%); scale: (5,5);
+        opacity: 1; 
+    }
+    75%{
+        transform: translateX(-600%); scale: (5,5);
+        text-shadow: none;
+        color: transparent;
+        opacity: 0; /*el texto desaparece*/
+    }
+    100%{
+        transform: translateX(0%); scale: (1,1);
+        text-shadow: 4px 0px 2px black;
+        color: white;
+        opacity: 1;/*el texto vuelve a su estado inicial*/
+    }
+}
+ 
+/* TARGETAS*/
+
+.card{
+    float: left;
+     width: 205px;
+     height: 300px;
+     border: 2px solid #cccccc;
+     box-shadow: 2px 1px 2px gray;
+     background: rgb(198, 229, 248);
+     margin: 20px;
+     margin-top: 40px;
+     overflow: hidden;
+     cursor: pointer;
+     transition: all 300ms ;
+}
+
+/*EFECTO EN LAS TARGETAS*/
+
+.card:hover{
+    background: black;
+}
+
+/*
+.card :last-child{
+    margin-right: 0px;
+} esto no se para que es */
+
+.card .icon{
+    display: block;
+    width:100%;
+    height: 130px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 110px;
+    margin: 0px auto;/*no se que funcion hace */
+    transition: all 300ms;
+}
+
+.card:hover .icon{
+    font-size: 70px;
+    color: #37bcf9;
+    animation: showIcon 300ms linear;
+    
+}
+
+@keyframes showIcon{
+    from{
+      transform: translateY(-200%);/*la targeta se va afuera , pero cuando la transitio de 1s va a volver , parece que cae desde arriba */
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+
+.card .category{
+    width: 100%;
+    height: 80px;
+    font-family: "TrebuchetMS";
+    font-size: 25px;
+    font-style: italic;
+   /* font-weight: bold; en el curso esta asi para poner la letra en negro y quitria el font style    */
+    color: mediumblue;
+    text-align: center;
+    transition: all 300ms;
+}
+/* me gusatria poder darle solo un fon size distinto a la segunda targeta para que se queden sistema operativo uno al lado del otro ,lo logre cambiando la clase pero quiero hacerlo a traves de :nth-child() */
+
+ /* .card .category2{
+     width: 100%;
+     height: 80px;
+     font-size: 20px;
+     font-family: "TrebuchetMS";
+     font-style: italic;
+     color: rgb(22, 189, 30);
+     text-align: center;
+ } */
+
+ .card:nth-child(2) h2 {
+     font-size: 20px;
+     color: rgb(22, 189, 30);
+ }
+/*EFECTO PARA LAS CATEGRIA*/
+.card:hover .category{
+     color: white;
+     animation: showCategory 400ms linear; /*mas tiempo que ls iconos para que aparezca primero*/
+}
+
+
+@keyframes showCategory{
+    from{
+        transform: translateY(-300%); /*viene desde arriba y -300 mayor que el icon para que aparezca despues que el  */
+        color: black;
+    }
+    to{
+        transform: translateY(0%); 
+        color: white;
+    }
+}
+
+
+.card .description{
+   /* display: block; esto me lo invente  */
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    color: rgb(238, 69, 17);
+    font-family: "TrebuchetMS";
+    font-size: 15px;
+    transition: all 300ms;
+}
+/*ANIMACION DE LAS CATEGORIA*/
+
+.card:hover .description{
+    color: violet;
+    animation: showDescription 400ms linear;
+}
+
+@keyframes showDescription{
+    from{
+      transform: translateX(-300%);/*aparece desde la izquierda al mismo tiempo que la categoria*/
+      color: black;
+    }
+    to{
+        transform: translateX(0%);
+        color: violet;
+    }
+}
+
+/*BARRA LATERAL */
+
+ #lateral{
+     width: 280px;
+     min-height: 1200px; /*DUDA, CREO QUE ES PARA QUE HAGA SCROLL*/
+     font-family: "TrebuchetMS";
+     float: right; /*esta flotado a la derecha , para variar
+     border: 1px solid rgb(201, 188, 188); */
+     margin: 22px; /*con este margen centro o mas bien alineo  todo los elemntos de la barra laterla ,con la targeta de arriba, pero se me  sepaara mucho de arriba*/
+ }
+aside h3{
+    display: block;
+    width: auto;
+    height: 45px;
+    background: url(../img/pxgray.png);
+    box-shadow: 0px 1px 0px#393d3f, 1px 2px 0px #393d3f , 2px 3px 0px #393d3f ,3px 4px 0px #393d3f;
+    font-family: "BebasNeue";
+    font-weight: normal;
+    font-size: 30px;
+    letter-spacing: 2px;
+    line-height: 45px;
+    padding-left: 20px;/* separarlo de la izquierda con un margen interior(padding)*/
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+#lateral h3:first-child{
+  margin-top: 0px;
+
+}
+/*esto es cuadro o la caja debajo de buscar */
+
+#serch{
+    width: 80%;
+    height: 35px;
+    margin: 10px auto;
+    background-color: white;
+    border: 1px solid #cccccc; 
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px #cccccc inset;
+}
+
+
+/*PERO SE QUEDA COMO UNA CAJA DETRO DE LA OTRA CAUNDO PONGO BORDE */
+ /*PARA AJUSTAR LA CAJA,( EL INPUT) DENTRO DE SERCH */
+#lateral input[type="text"]{
+    width: 80%; /*SE LE REDUCE HASTA QUE QUEPA EL ICON*/
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: transparent;
+    color:#ccc;
+    padding-left: 5px;
+    transition: all 1s;
+    
+}
+
+#lateral input[type="text"]:focus{
+    color: rgb(47, 0, 255);
+}
+
+
+#lateral input[type="button"], 
+#lateral input[type="submit"] {
+    height: 34px;
+    border: none;
+    cursor:pointer;
+    border-left: 2px solid #cccccc;
+    font-size: 15px;
+    background-color: transparent;
+    color:#555; 
+    padding-left: 7px;
+   
+} 
+/* en el box shadow, hay tres para hacer el efecto 3D*/
+.aside-box{
+    display: block;
+    width: 85%;
+    height: 250px;
+    border: 1px solid whitesmoke;
+    border-right: 10px;
+    box-shadow: 0px 0px 1px #cccccc, 0px 2px 6px #cccc, 0px 1px #ccc inset, 0px -3px 2px #ccc inset;
+    padding: 10px;
+    margin: 0px auto;
+    margin-top: 30px;
+  
+}
+
+#login input[type="email"],
+#login input[type="password"]{
+    display: block;
+    margin: 0px auto;
+ /*   margin-top: 20px; en el curso esta pero a mi no me funciona*/
+    width: 70%;
+    height: 25px;
+    box-shadow: 1px 1px 1px #cccccc inset;
+    border-radius: 5px;
+    padding-left: 35px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    color: gray;
+    
+}
+
+#login input[type="email"]:focus,
+#login input[type="password"]:focus{
+    color:#555;
+    box-shadow: 1px 1px 1px gray inset;
+}
+
+#login #user{
+    display: block;
+    position: absolute;
+    text-align: center;
+    margin-left: 30px;
+    line-height: 30px;
+   /* margin-top: 5px;  en el curso esta 
+   border-right: 1px solid rgb(167, 158, 158); es para poner un borde al lado del icono  */
+}
+
+#login #password{
+    display: block;
+    position: absolute;
+    text-align: center;
+    margin-left: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    
+}
+
+#login input[type="button"],
+#login input[type="submit"],
+#login input[type="reset"],
+#login button{
+   /* display: block; los coloca uno abajo del otro , asi que hay que flotarlos o sino quitar el display */
+    width: 40%;
+    height: 30px;
+    margin-top: 10px;
+    text-align: center;
+    color: green;
+    background: linear-gradient(to bottom, #3eb8e5 0%, #2ca0ca 100% );
+    border: 1px solid #156785;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: "TrebuchetMS";
+    font-weight: lighter; /* Duda*/
+    margin-left: 14px;
+    transition: all 1s;
+    margin-bottom: 10px ;
+}
+
+
+#login input[type="button"]:hover,
+#login input[type="submit"]:hover,
+#login input[type="reset"]:hover,
+#login button:hover{
+     box-shadow: 0px 0px 3px gray;
+
+}
+
+
+#login a{
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    text-align: center; /*EN EL CURSO PARA CENTRARLO USAN MARGIN LEFT , Y PARA SEPARARLOS DE ARRIBA SIN QUE SE SEPAREN ELLOS ENTRE SI , EN LOS IMPUT DE LOS BOTONES SE LES PONE MARGIN BOTTON*/
+    color: green;
+    transition: all 1s;
+}
+
+
+#login a:hover{
+    text-decoration: underline;
+    color:red;
+}
+  
+
+#social{
+    height: 195px;
+}
+
+ #social a{
+    display: block;
+  /*  margin:  10px auto; esto es para drle margen a todos los elementos */
+    color:black;
+    font-size: 30px;
+    margin-left: 15px;
+    margin-top: 15px;
+   margin-bottom: 20px; 
+}
+/*estilos a los overlay, el div que hace una caja para los nombre de cada red*/
+
+#social .overlay{
+    display: block;
+    height: 20px;
+    margin-left: 80px;
+    margin-top: -50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 3px solid white;
+    box-shadow: opx 0px 2px #ccc;
+    position: absolute;
+    padding: 5px;
+    background: rgb(223, 213, 213);
+    border-radius: 5px;
+    transform: translateX(-80%); /*para llevarmelo a la izquierda, con esto y opacity se oculta , ni idea ??*/
+    opacity: 0;
+    transition: all 300ms;
+
+}
+ /*esto es porque el overlay esta en un div y cuando entre a ese div o sea haga hover quiero los efectos */
+#social div:hover .overlay{
+     opacity: 1;/*para que se vuelva a ver cuando hago hover, porque lo tengo oculto  */
+     transform: translateX(0%);
+}
+
+
+#sponsor{
+    height: 330px;
+}
+
+
+#sponsor  h1{ display: block;
+    color: red;
+    text-shadow: 0px 2px 1px rgb(199, 82, 82);
+    text-align: center;
+    margin-bottom: 15px;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    cursor: progress;
+    
+}
+#sponsor img{
+    display: block;
+    margin: 5px auto;
+    border-radius: 5px;
+   /* border: 1px solid rgb(112, 112, 238);*/
+    box-shadow: 0px 0px 1px rgb(112, 112, 238), 0px 2px 6px rgb(112, 112, 238), 0px 1px rgb(112, 112, 238) inset, 0px -3px 2px rgb(112, 112, 238) inset;
+}
+
+
+/*ARTICULOS ,SE CREA UN CLAERFIX, PARA LIMPIAR LOS FLOTADOS , ESTO ME BAJA LOS ARTICLOS , LUEGO TIENES QUE FLOTARLOS */
+#articles{
+    width: 800px;
+    float: left; /*al crear un clearfix debajo del h2 (<div class="clearfix", luego en css, creas la clase .clearfix{float:none, clear:both), limpias los flotados , pero te baja los articulos, es por eso que los tienes que flotar luego a la derecha */
+ 
+}
+
+#articles h2{
+    display: block;
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    line-height: 75px;
+    color:black;
+    background: url(../img/pxgray.png);
+    box-shadow: 0px 1px 0px#393d3f, 1px 2px 0px #393d3f , 2px 3px 0px #393d3f ,3px 4px 0px #393d3f;
+    font-family: BebasNeue;
+    font-size: 40px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin: 0px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+#articles article{
+    width: 95%;
+    height: auto;
+    border: 2px solid #ccc;
+    margin-top: 25px;
+    padding: 10px;
+    margin:  40px auto;
+    font-family: TrebuchetMS;
+    background: white;
+    color: black;
+    box-shadow: 1px 1px 2px #dddddd;
+}
+
+#articles article h4{
+    display: block;
+    font-size: 25px;
+    margin: 3px;
+
+}
+
+#articles article h4 a{
+   text-decoration: none;
+   color: #00538c;
+
+}
+
+#articles article h4 a:hover{
+   text-decoration: underline;
+   color: red;
+
+}
+/*EN EL CURSO LO PONE COMO ( #ARTICLES .DATA ) Y AHI LE DA LOS ESTILOS */
+#articles .data{
+    display: block;
+    float: right;
+    width: auto;
+    height: 35px;
+    margin: -10px ;
+    padding: 4px;
+    background-color: #393d3f;
+    color: white;
+    border-radius: 0px 0px 0px 5px;
+    line-height: 30px;
+    font-size: 15px;
+}
+#articles article p {
+     font-size: 15px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+}
+
+article p a {
+    text-decoration: none;
+    color: #00538c; 
+}
+/*EN EL CURSO LE DA TODOS LOS ESTILOS A (#BLOG)
+#BLOG{
+    HEIG:100PX;
+    FONT-FAMILY, TEXT-ALING, LINE-HEIGHT, MARGIN TOP
+
+Y LUEGO AL ENLACE #BLOG A {
+ 
+  SI YO PONGO SOLO #BLOG SIN EL # ARTICLES , LA CAJA NO ME COGE NI EL BACKGROUND NI LA SOMBRA EN 3D  
+ PORQUE #BLOG ESTA DENTRO DENTRO DEL DIVCON ID #ARTICLES, EL CONTENEDOR PRICIPAL DE LOS ARTICULOS EN SI  , A LO QUEL ESTOY DANDO ESTILO ES LA CAJA DE ARTICULO */
+#articles #blog{
+   height: 55px;
+    background: url(../img/pxgray.png);
+    box-shadow: 0px 1px 0px#393d3f, 1px 2px 0px #393d3f , 2px 3px 0px #393d3f ,3px 4px 0px #393d3f;
+    transition: all 1s;
+}
+
+ #blog a {
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    text-decoration: none;
+    color: #00538c; 
+    font-family: "BebasNeue";
+    letter-spacing: 2px;
+    transition: all 1S;
+}
+
+ /*CUANDO PASE POR ENCIMA del articulo blog HACER EFECTO DELUCES DE NEON , CAMBIAR EL FONDO DE COLOR , EL BORDE QUE SEA MAS GRUESO, Y QUE
+ por eso creo las propiedades en el hover para luego darle la animacion con los @keyframes  */
+#blog:hover{
+    background-color: #555 !important;
+    border: 10px solid #37bcf9;
+    border-radius: 240px;
+    box-shadow: 0px 0px 10px gray;
+    animation: blink 10s infinite linear; /*BLINK(PARPADEAR) INFINITE QUE NO PARE */
+}
+
+@keyframes blink{
+    0%{
+        border: 10px solid #37bcf9;
+    }
+
+    25%{
+        border: 10px solid green;
+    }
+
+    50%{
+        border: 10px solid yellow;
+    }
+    75%{
+        border: 10px solid white;
+    }
+    100%{
+        border: 10px solid #37bcf9;
+    }
+}
+
+#blog:hover a{
+    
+      color: blue;
+      text-shadow: 1px 1px 1px black, 1px 2px 1px black , 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 6px 1px black;
+      text-decoration: underline;
+      transform: scale(1.2, 1.2);
+  } 
+
+
+/*FOOTER*/
+
+#footer{
+    width: 100%;
+    height: 470px;
+    background: black;
+    color: white;
+    overflow: hidden;/*PARA QUE TODO EL CONTENIDO SE QUEDE DENTRO DEL FOOTER */
+}
+/*esto son los estilos de todos los wrap , la caja que hay dentro del footer , a todas los div que hay dentro o sea las cajas con las cosas */
+#footer .wrap >div{ /*DUDA, LOS PRIMEROS HIJOS DEL WRAP (QUE ESTA DNTRO DEL FOOTER), QUE SON LOS DIV */
+    float: left;
+    width: 300px;
+    height: 350px;
+    margin: 40px;
+    text-align: center;
+    color: rgb(83, 223, 90);
+    font-family: 'Trebuchet MS';
+}
+
+#footer a {
+    text-decoration: none;
+    color: #37bcf9;
+    transition: all 1s;
+}
+
+#footer h5{
+    display: block;
+    background: url("../img/pxgray.png"), white;
+    height: 50px;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 50px;
+    color: black;
+    font-size: 35px;
+    font-family: BebasNeue;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#footer ul{ /*ESTO SON ESTILOS DE LA LISTA EN GENERAL A TODA EN SI */
+    text-align: left;/*SE LE PONE TEX ALING Y NO FLOAT PORQUE SI TE LOS FLOTA QUE NOS LOS ALINEA, QUE ES LO QUE REALMENTE QUIERO */
+    margin: 30px;
+    font-size: 25px;
+    margin-top: 20px;
+}
+#footer ul li{ /*ESTO ES PARA PODER SEPARAR LOS ELEMNTOS DE LA LISTA  ENTRE SI */
+    margin-top: 10px;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+#footer ul li a {
+    display: block;
+    height: 30px;/*PARA SEPARAR LOS ENLACES ENTRE ELLOS */
+    transition: all 300ms;
+
+}
+
+/*TRANSITION Y ANIMACIONES A LA LI DEL FOOTER CUANDO HAGA HOVER*/
+#footer ul li:hover a{
+    padding-left: 40px; /*se me vaya a la derecha */
+    color:  rgb(83, 223, 90);
+}
+
+
+#footer iframe {
+    width:100%;
+    height: 295px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 5px solid white;
+    box-shadow: 0px 0px 5px gray;
+}
+ #browser img{
+    width: 45px;
+}
+
+   
+#footer img{
+    margin-bottom: 15px;
+}

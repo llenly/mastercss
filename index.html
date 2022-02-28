@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no"/> <!--esto es para que se me ponga en vista de diseño adapatable y luego ver en responsive -->
+    <title>Master en css con Victor Robles Web</title>
+    <link rel="icon" type="favicon/x-icon" href="img/supertux.png" /> <!--es para el logo en el titulo cuando se abre la pagina -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" /> <!--es para enlzar el archivo css donde estan todos los estilos -->
+    <link rel="stylesheet" type="text/css" href="css/resposive.css" /> <!--es lo mismo pero en nuevo css con el responsive para que no sea tan largo un solo css-->
+
+</head>
+
+<body>
+    <!--INICIO DE LA CABECERA (HEADER)-->
+    <header id="header">
+        <div class="wrap">
+            <!--es un contenedor para lo que hay dentro del menu (se le llama wrap) , la caja por asi decir , que contien el resto de lo que hay en el menu-->
+            <div id="logo">
+                <label class="gear">S</label>
+                <!--(ENGRANAJE,EL SIMBOLITO  HACE A TRAVES DE FUENTES,) ES UNA ETIQUETA VACIA QUE SE USA PARA DARLE ESTILOS CSS A ALGO DENTRO DEL DIV, EN ESTE CASO LA FIGURITA DE ENGRANAJE QUE ESTA DENTRO DE LA CASILLA (BLOG)-->
+                <h3>BLOG</h3>
+            </div>
+            <!--HACIENDO EL MENU DE NAVEGACION, DENTRO DEL DIV CLASS WRAP, PORQUE ESE MENU ESTA DENTRO DE ES CONTENEDOR  -->
+            <nav id="menu">
+                <ul>
+                    <li><a href="#">INICIO</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">FORMACION</a></li>
+                    <li><a href="#">CONTACTO</a></li>
+
+                </ul> 
+            </nav>
+
+        </div>
+    </header>
+
+    <!--FIN DE LA CABECERA (HEADER)-->
+
+    <section class="wrap wrap-content">
+        <section id="info">
+
+            <!--INICIO BANNER ( ES LA SEGUNDA CABECERA QUE HAY DEBAJO DEL MENU )-->
+
+            <div id="banner">
+                <h1>Cursos de Desarrollo Web con Victor Robles Web</h1>
+            </div>
+
+            <!--FIN DEL BANNER-->
+
+            <!--INICIO DE LAS TARGETAS -->
+            <!--esto es para darle luego css a las targetas en general -->
+            <div id="cards">
+                <!--crear div con class para crear las targetas y darle estilos -->
+                <div class="card">
+
+                    <p class="icon">H</p> <!-- las class es para darle estilos css a las figuritas (iconos)-->
+
+                    <h2 class="category">Desarrollo WEB</h2>
+
+                    <p class="description">
+                        Aprende los principales lenguajes para desarrollar webs ¡Conviertete en un webmaster!
+                    </p>
+                </div>
+
+                <div class="card">
+
+                    <p class="icon">_</p>
+
+                    <h2 class="category">Sistemas Operativos</h2>
+
+                    <p class="description">
+                        <a href="#"> Aprende a administrar sistemas Linux y Windows.</a>
+                    </p>
+                </div>
+
+                <div class="card">
+
+                    <p class="icon">S</p>
+
+                    <h2 class="category">Hadware</h2>
+
+                    <p class="description">
+                        Conoce los entresijos del hardware.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <p class="icon">u</p>
+
+                    <h2 class="category">Redes e Internet</h2>
+
+                    <p class="description">
+                        Aprende a configuarar y administrar redes informaticas y servidores.
+                    </p>
+                </div>
+
+                <div class="card">
+
+                    <p class="icon">a</p>
+
+                    <h2 class="category">Base de datos</h2>
+
+                    <p class="description">
+                        Aprende a montar y administrar bases de datos.
+                    </p>
+
+                </div>
+
+            </div>
+            <!--FIN DE LAS TARGETAS -->
+
+        </section>
+
+        <!--INICIO DE LA BARRA LATERAL-->
+        <div class="clearfix"></div> <!--ESTE ES PARA CAUNDO HAGO EL RESPONSIVE, ME LIMPIE LOS FLOTADOS ENTRE LAS TARGETAS Y LA BARRA LATERAL O ES ESTA SE UBIQUE ABAJO -->
+        <aside id="lateral">
+            <!--siempre se abre con aside y se le pone id para darle estilos a la barra lateral en si , luedo se crean div con id y clase en depedencia de lo que haya enla barra lateral -->
+
+            <h3>BUSCAR</h3>
+            <div id="serch">
+                <!--buscar en ingles, esto es la segunda casilla despues de buscar -->
+                <form>
+
+                    <input type="text" />
+                    <!--no tiene label ? porque solo es una casilla -->
+                    <!--   <label id="text" ></label> -->
+                    <input type="button" value="L" class="icon" />
+                </form>
+            </div>
+
+            <h3>LOGIN</h3>
+            <div id="login" class="aside-box">
+                <!--class es para hacer las cajas que hay debajo de los h3-->
+                <form>
+                    <label id="user" class="icon">U </label>
+                    <!-- (USER=USUARIO Y LA U=AL LOGO DEL MUÑEQUITO)DUDA PORQUE A QUEI SI SE USA LABEL -->
+                    <input type="email" />
+
+                    <label id="password" class="icon">w </label>
+                    <!--LA (W) ESQUIVALE AL CANDADO-->
+                    <input type="password" />
+
+                    <input type="submit" value="entrar" />
+                    <input type="reset" value="limpiar" />
+
+                    <a href="#">Registrate Aqui </a>
+                    <a href="#">¿Has olvidado tu contaseña?</a>
+                </form>
+            </div>
+
+            <h3>REDES SOCIALES </h3>
+            <div id="social" class="aside-box">
+
+                <div class="twitter">
+                    <a href="#" class="icon">t</a>
+                    <p class="overlay">
+                        Twitter
+                    </p>
+                </div>
+
+                <div class="facebook">
+                    <a href="#" class="icon">f</a>
+                    <p class="overlay">
+                        Facebook
+                    </p>
+                </div>
+
+                <div class="youtube">
+                    <a href="#" class="icon">y</a>
+                    <p class="overlay">
+                        Youtube
+                    </p>
+                </div>
+            </div>
+
+            <h3>COLABORADORES</h3>
+            <div id="sponsor" class="aside-box">
+                <h1>ALEGNAAA</h1>
+                <img src="img/frase.png" alt="frase">
+            </div>
+            <!--(SPONSOR=PATROSINADORES)-->
+        </aside>
+
+        <!--FIN DE LA  BARRA LATERAL-->
+
+
+        <!--INICIO DE LOS ARTICULOS -->
+
+        <section id="articles">
+            
+                 <h2>Ultimos articulos</h2>
+               <div class="clearfix"></div><!--se crea el clearfix para limpiar los flotados entre el h2 y los articulos   -->
+
+                <article>
+                    <div class="data">
+                    <span>Fecha: 12 dic</span>
+                    <span>Categoria: Pruebas</span>
+                </div>
+                <h4>
+                    <a href="#">Titulo del articulo </a>
+                </h4>
+                <p>
+                    What is Lorem Ipsum?
+
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    Why do we use it?. <a href="#">LEER MAS </a>
+
+                </p>
+            </article>
+
+            <article>
+                <div class="data">
+                    <span>Fecha: 12 dic</span>
+                    <span>Categoria: Pruebas</span>
+                </div>
+                <h4>
+                    <a href="#">Titulo del articulo </a>
+                </h4>
+                <p>
+                    What is Lorem Ipsum?
+
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    Why do we use it?. <a href="#">LEER MAS </a>
+
+                </p>
+            </article>
+            <article>
+                <div class="data">
+                    <span>Fecha: 12 dic</span>
+                    <span>Categoria: Pruebas</span>
+                </div>
+                <h4>
+                    <a href="#">Titulo del articulo </a>
+                </h4>
+                <p>
+                    What is Lorem Ipsum?
+
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    Why do we use it?. <a href="#">LEER MAS </a>
+
+                </p>
+            </article>
+            <article>
+                <div class="data">
+                    <span>Fecha: 12 dic</span>
+                    <span>Categoria: Pruebas</span>
+                </div>
+                <h4>
+                    <a href="#">Titulo del articulo </a>
+                </h4>
+                <p>
+                    What is Lorem Ipsum?
+
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    Why do we use it?. <a href="#">LEER MAS </a>
+
+                </p>
+            </article>
+            <article>
+                <div class="data">
+                    <span>Fecha: 12 dic</span>
+                    <span>Categoria: Pruebas</span>
+                </div>
+                <h4>
+                    <a href="#">Titulo del articulo </a>
+                </h4>
+                <p>
+                    What is Lorem Ipsum?
+
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    Why do we use it?. <a href="#">LEER MAS </a>
+
+                </p>
+            </article>
+            <article>
+                <div class="data">
+                    <span>Fecha: 12 dic</span>
+                    <span>Categoria: Pruebas</span>
+                </div>
+                <h4>
+                    <a href="#">Titulo del articulo </a>
+                </h4>
+                <p>
+                    What is Lorem Ipsum?
+
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    Why do we use it?. <a href="#">LEER MAS </a>
+
+                </p>
+            </article>
+               <article id="blog">
+                   <a href="#">Ir al blog</a>
+               </article>
+
+        </section>
+
+        <!--FIN DE LOS ARTICULOS -->
+    </section>
+
+     <!-- INICIO PIE DE PAGINA O FOOTER, SE CREA EL CLEARFIX PARA LIMPIAR LOS FLOTADOS DEL FOOTER -->
+     <div class="clearfix"></div>
+
+         <footer id="footer">
+      <!--esto es porque tenemos una caja dentro del la caja o footer negro y esa caja a su vez es la que tiene todos los eleemntos , asi que usamos un div con class para poder darle estilos -->
+              <div class="wrap" >
+              
+                <div id="menu_footer"> <!--ESTE MENU LO PUEDES CREAR CON DIV, SPAN, (CREO?)-->
+
+                    <h5>MENU</h5>
+                        <ul>
+                        <li><a href="#">INICIO</a></li>
+                        <li><a href="#">BLOG</a></li>
+                        <li><a href="#">FORMACION</a></li>
+                        <li><a href="#">CONTACTO</a></li>
+                      </ul>
+
+                </div>
+                 
+            <div id="location">
+                <h5>¿DONDE ESTAMOS ?</h5> <!--LA ETIQUETA IFRAME SE USA PARA PONER MAPA , VAS A GOGLLE MAP BUSCA EL SITIO, LE DAS A COMPARTIR , INSERTAR UN MAPA , COPIAR A HTML, LO CPIAS Y LO PEGAS-->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.636541019765!2d-3.7056720852968024!3d40.41690187936515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422880a07d7dc7%3A0x694aee57da1dc679!2sPuerta%20del%20Sol%2C%20Madrid!5e0!3m2!1ses!2ses!4v1589823828899!5m2!1ses!2ses" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+              
+            <div id="info">
+                <h5>Desarrollado con</h5>
+                <p>
+                      <img src="img/html5-badge-h-css3-graphics-multimedia-performance-semantics.png" alt="creado con html y css">
+                   
+                </p>
+
+                <h5>Optimizado para </h5>
+                <p id="browser"> <!--NAVEGADORES-->
+                   <a href="#">
+                     <img src="img/firefox-icon.png" alt="firefox" title="firefox"/>
+                   </a>
+                   <a href="#">
+                    <img src="img/chrome.png" alt="chrome" title="chrome"/>
+                  </a>
+                  <a href="#">
+                    <img src="img/Opera_256x256.png" alt="Opera" title="Opera"/>
+                  </a>
+                  <a href="#">
+                    <img src="img/safari.png" alt="safari" title="safari"/>
+                  </a>
+                  <a href="#">
+                    <img src="img/android.png" alt="android" title="android"/>
+                  </a>
+                  <a href="#">
+                    <img src="img/ios.png" alt="apple" title="apple"/>
+                  </a>
+                </p>
+
+                <h5>Autor</h5>
+                   <p>&copy; Victor Robles Web-victorroblesweb.es</p>
+
+
+            </div>
+            </div>
+         </footer>
+
+  <!-- FIN DEL PIE DE PAGINA O FOOTER-->
+
+    </div>
+</body>
+
+</html>
